@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MineRise — Discord</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-inner">
+      <div class="brand"><div class="logo">MR</div><div class="site-title">MineRise</div></div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="downloads.html">Downloads</a>
+        <a href="discord.html">Discord</a>
+      </nav>
+      <button class="nav-hamburger" id="hambtn4">☰</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero-card" style="margin-top:22px;">
+      <h2 style="margin:0 0 8px 0">Community & Discord</h2>
+      <p style="color:var(--muted); margin:0 0 16px 0">Join our community for support, announcements, and development updates.</p>
+
+      <div style="display:flex; gap:18px; align-items:flex-start; flex-wrap:wrap;">
+        <div style="flex:1; min-width:260px;">
+          <h4 style="margin-top:0">Join our Discord</h4>
+          <p style="color:var(--muted)">Click the invite below to join. We have sections for help, support, suggestions and community events.</p>
+          <a class="btn" href="#" id="inviteBtn">Copy Invite</a>
+          <div style="margin-top:12px; color:var(--muted); font-size:13px;">Invite: <code id="inviteCode">https://discord.gg/YOUR_INVITE</code></div>
+        </div>
+
+        <div style="flex:1; min-width:320px;">
+          <div class="preview" style="height:220px; border-radius:10px;">
+            Discord preview
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>© MineRise</div>
+      <div><a href="index.html" style="color:var(--muted); text-decoration:none">Home</a> · <a href="downloads.html" style="color:var(--muted); text-decoration:none">Download</a></div>
+    </footer>
+  </main>
+
+  <script>
+    const ham = document.getElementById('hambtn4');
+    ham?.addEventListener('click', ()=> {
+      const m = document.getElementById('mobileMenu');
+      if(m){ m.remove(); return; }
+      const box = document.createElement('div');
+      box.className = 'menu-open';
+      box.id = 'mobileMenu';
+      box.innerHTML = '<a href=\"index.html\">Home</a><a href=\"features.html\">Features</a><a href=\"downloads.html\">Downloads</a><a href=\"discord.html\">Discord</a>';
+      document.body.appendChild(box);
+    });
+
+    document.getElementById('inviteBtn')?.addEventListener('click', ()=> {
+      const txt = document.getElementById('inviteCode').innerText;
+      navigator.clipboard?.writeText(txt);
+      alert('Invite copied to clipboard');
+    });
+  </script>
+</body>
+</html>
