@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MineRise — Home</title>
+  <meta name="description" content="MineRise — Rise Above. Play Beyond." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-inner">
+      <div class="brand"><div class="logo">MR</div><div class="site-title">MineRise</div></div>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="downloads.html">Downloads</a>
+        <a href="discord.html">Discord</a>
+      </nav>
+
+      <button class="nav-hamburger" id="hambtn" aria-label="menu">☰</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <div class="hero-card">
+          <h1 class="h-title">MineRise — Rise Above. Play Beyond.</h1>
+          <p class="h-sub">A lightweight, high-performance Minecraft client built for PvP and competitive play. Faster FPS, cleaner UI, and powerful quality-of-life features.</p>
+
+          <div style="display:flex; gap:12px; align-items:center; margin-top:18px;">
+            <a class="btn" href="downloads.html">Download</a>
+            <a class="btn ghost" href="features.html">See Features</a>
+            <a class="btn ghost" style="margin-left:auto;" href="discord.html">Join Discord</a>
+          </div>
+
+          <div style="margin-top:20px; color:var(--muted); font-size:13px;">
+            <strong>Trusted by competitive players.</strong> Lightweight, customizable, and maintained.
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="preview">
+          App preview
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-top:28px">
+      <h3 style="margin:0 0 12px 0">Quick Features</h3>
+      <div class="features-grid">
+        <div class="feature">
+          <h4>Ultra FPS Boost</h4>
+          <p>Optimized rendering pipeline for more frames per second with minimal configuration.</p>
+        </div>
+        <div class="feature">
+          <h4>Custom HUD</h4>
+          <p>Lightweight HUD elements with resize and position controls.</p>
+        </div>
+        <div class="feature">
+          <h4>Low Latency</h4>
+          <p>Network optimizations and battery-friendly background tasks.</p>
+        </div>
+        <div class="feature">
+          <h4>Theme & Cosmetics</h4>
+          <p>Simple cosmetic system with in-client unlocks and presets.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>© <strong>MineRise</strong> — Rise Above. Play Beyond.</div>
+      <div><a href="discord.html" style="color:var(--muted); text-decoration:none">Discord</a> · <a href="downloads.html" style="color:var(--muted); text-decoration:none">Download</a></div>
+    </footer>
+  </main>
+
+  <script>
+    // mobile menu
+    const ham = document.getElementById('hambtn');
+    const nav = document.getElementById('navLinks');
+    let menuOpen = false;
+    ham.addEventListener?.('click', ()=> {
+      menuOpen = !menuOpen;
+      if(menuOpen){
+        const box = document.createElement('div');
+        box.className = 'menu-open';
+        box.id = 'mobileMenu';
+        box.innerHTML = '<a href="index.html">Home</a><a href="features.html">Features</a><a href="downloads.html">Downloads</a><a href="discord.html">Discord</a>';
+        document.body.appendChild(box);
+      } else {
+        document.getElementById('mobileMenu')?.remove();
+      }
+    });
+  </script>
+</body>
+</html>
