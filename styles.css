@@ -5,13 +5,12 @@ body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   background: #0f0c29;
-  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
-  color: white;
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  color: #fff;
 }
 
 h1, h2, h3 {
   margin: 0;
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff;
 }
 
 /* ========================= */
@@ -21,7 +20,7 @@ h1, h2, h3 {
   justify-content: space-between;
   align-items: center;
   padding: 20px 50px;
-  background: rgba(0, 0, 0, 0.2); /* transparent */
+  background: rgba(0,0,0,0.2); /* transparent */
   position: sticky;
   top: 0;
   z-index: 100;
@@ -39,32 +38,16 @@ h1, h2, h3 {
   font-weight: 500;
   position: relative;
   text-decoration: none;
-  transition: 0.3s;
-}
-
-/* Hover effect: move up + neon edge */
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  bottom: -5px;
-  left: 0;
-  background-color: #fff;
-  transition: 0.3s;
+  transition: transform 0.3s, text-shadow 0.3s;
 }
 
 .nav-links a:hover {
-  transform: translateY(-5px);
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
+  transform: translateY(-4px);
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff;
 }
 
 .nav-links a.active {
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+  text-shadow: 0 0 10px #fff;
 }
 
 /* Buttons */
@@ -75,18 +58,15 @@ h1, h2, h3 {
   border-radius: 5px;
   font-weight: bold;
   color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 1px;
   cursor: pointer;
-  transition: 0.3s;
-  box-shadow: 0 0 5px #fff, 0 0 10px #fff;
+  transition: all 0.3s;
 }
 
 .btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00d8ff;
+  transform: translateY(-3px);
   border-color: #00d8ff;
   color: #00d8ff;
+  box-shadow: 0 0 15px #00d8ff, 0 0 30px #00d8ff;
 }
 
 /* ========================= */
@@ -101,19 +81,18 @@ h1, h2, h3 {
 
 .hero-content h1 {
   font-size: 3em;
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00d8ff;
+  text-shadow: 0 0 10px #fff;
 }
 
 .hero-content p {
   font-size: 1.3em;
   margin: 20px 0;
-  text-shadow: 0 0 5px #fff, 0 0 10px #00d8ff;
 }
 
 .hero-image img {
   max-width: 500px;
   width: 100%;
-  filter: drop-shadow(0 0 20px #00d8ff);
+  filter: drop-shadow(0 0 15px #00d8ff);
 }
 
 /* ========================= */
@@ -132,18 +111,51 @@ h1, h2, h3 {
 }
 
 .feature-card {
-  background: rgba(0, 0, 0, 0.3);
-  padding: 30px;
+  background: linear-gradient(145deg, #1a1a1a, #222222);
   border-radius: 15px;
   width: 250px;
+  padding: 30px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 0 10px rgba(0,216,255,0.3), 0 10px 20px rgba(0,0,0,0.5);
   transition: transform 0.3s, box-shadow 0.3s;
-  text-shadow: 0 0 5px #fff;
-  border: 1px solid rgba(255,255,255,0.2);
 }
 
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(0,216,255,0.3) 0%, transparent 70%);
+  transform: rotate(45deg);
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+
+.feature-card:hover::before {
+  opacity: 1;
+}
+
+.feature-card h3 {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+  color: #fff;
+  text-shadow: 0 0 5px #00d8ff;
+}
+
+.feature-card p {
+  font-size: 1em;
+  color: #ccc;
+}
+
+/* Hover Effect for Cards */
 .feature-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 0 20px #00d8ff, 0 0 40px #00d8ff;
+  box-shadow: 0 0 25px #00d8ff, 0 10px 40px rgba(0,0,0,0.6);
 }
 
 /* ========================= */
@@ -154,22 +166,20 @@ h1, h2, h3 {
 }
 
 .download-btn {
-  background: transparent;
-  border: 2px solid #fff;
+  background: linear-gradient(90deg, #00d8ff, #00ffea);
+  border: none;
   padding: 15px 30px;
   border-radius: 8px;
   font-weight: bold;
-  color: #fff;
+  color: #000;
   cursor: pointer;
+  box-shadow: 0 0 10px #00d8ff, 0 0 20px #00ffea;
   transition: all 0.3s;
-  box-shadow: 0 0 5px #fff, 0 0 10px #00d8ff;
 }
 
 .download-btn:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 15px #00d8ff, 0 0 25px #00d8ff;
-  border-color: #00d8ff;
-  color: #00d8ff;
+  box-shadow: 0 0 25px #00d8ff, 0 0 40px #00ffea;
 }
 
 /* ========================= */
@@ -186,7 +196,7 @@ h1, h2, h3 {
   margin: 10px auto;
   padding: 12px;
   border-radius: 5px;
-  border: 2px solid rgba(255,255,255,0.3);
+  border: 2px solid rgba(255,255,255,0.2);
   background: rgba(0,0,0,0.3);
   color: #fff;
   font-size: 1em;
@@ -196,28 +206,26 @@ h1, h2, h3 {
 .contact input:focus,
 .contact textarea:focus {
   border-color: #00d8ff;
-  box-shadow: 0 0 10px #00d8ff;
+  box-shadow: 0 0 15px #00d8ff;
   outline: none;
 }
 
 .contact button {
   margin-top: 20px;
-  background: transparent;
-  border: 2px solid #fff;
+  background: linear-gradient(90deg, #00d8ff, #00ffea);
+  border: none;
   padding: 10px 25px;
   border-radius: 5px;
   font-weight: bold;
-  color: #fff;
+  color: #000;
   cursor: pointer;
-  box-shadow: 0 0 5px #fff, 0 0 10px #00d8ff;
-  transition: 0.3s;
+  box-shadow: 0 0 10px #00d8ff, 0 0 20px #00ffea;
+  transition: all 0.3s;
 }
 
 .contact button:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 20px #00d8ff, 0 0 40px #00d8ff;
-  border-color: #00d8ff;
-  color: #00d8ff;
+  box-shadow: 0 0 25px #00d8ff, 0 0 40px #00ffea;
 }
 
 /* ========================= */
@@ -226,7 +234,7 @@ footer {
   text-align: center;
   padding: 30px;
   background: rgba(0,0,0,0.3);
-  border-top: 1px solid rgba(255,255,255,0.2);
+  border-top: 1px solid rgba(255,255,255,0.1);
   text-shadow: 0 0 5px #fff;
 }
 
