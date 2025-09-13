@@ -1,129 +1,67 @@
-/* =====================
-   Global Theme
-   ===================== */
+/* Base */
 body {
   margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background-color: #0b0b0b; /* Dark background */
-  color: #f5f5f5;
-  line-height: 1.6;
-}
-
-/* Smooth animations everywhere */
-* {
-  transition: all 0.25s ease-in-out;
-  box-sizing: border-box;
-}
-
-/* =====================
-   Navbar
-   ===================== */
-nav {
-  background: #000;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 2px solid #111;
-}
-
-nav .logo {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #ff6600; /* Orange accent */
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li a {
-  color: #f5f5f5;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  position: relative;
-}
-
-nav ul li a:hover {
-  color: #0ff;
-  box-shadow: 0 0 12px #0ff, 0 0 24px #0ff;
-}
-
-/* =====================
-   Buttons
-   ===================== */
-button, .btn {
-  background: #111;
-  color: #f5f5f5;
-  border: 2px solid #ff6600;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-button:hover, .btn:hover {
-  color: #0ff;
-  border-color: #0ff;
-  box-shadow: 0 0 12px #0ff, 0 0 24px #0ff, 0 0 48px #0ff;
-  transform: translateY(-2px);
-}
-
-/* =====================
-   Sections
-   ===================== */
-section {
-  padding: 4rem 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+  background: #0f0c29;
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  color: white;
 }
 
 h1, h2, h3 {
-  color: #ff6600;
-  margin-bottom: 1rem;
+  margin: 0;
 }
 
-/* Feature cards */
-.card {
-  background: #111;
-  padding: 2rem;
-  border-radius: 12px;
-  border: 1px solid #222;
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: rgba(0,0,0,0.7);
+  position: sticky;
+  top: 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: white;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #00d8ff;
+}
+
+.btn {
+  background: #00d8ff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #000;
+}
+
+/* Sections */
+.hero, .features, .download, .contact {
+  padding: 100px 50px;
   text-align: center;
 }
 
-.card:hover {
-  border-color: #0ff;
-  box-shadow: 0 0 16px #0ff, 0 0 32px #0ff;
-  transform: scale(1.03);
+.feature-grid {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 40px;
 }
 
-/* =====================
-   Footer
-   ===================== */
-footer {
-  text-align: center;
-  padding: 2rem;
-  background: #000;
-  border-top: 2px solid #111;
-  font-size: 0.9rem;
-  color: #888;
-}
-
-footer a {
-  color: #ff6600;
-  text-decoration: none;
-}
-
-footer a:hover {
-  color: #0ff;
-  text-shadow: 0 0 8px #0ff;
+.feature-card {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
 }
