@@ -1,4 +1,6 @@
-/* Base */
+/* ========================= */
+/* Base Styles */
+/* ========================= */
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
@@ -11,7 +13,13 @@ h1, h2, h3 {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
+/* ========================= */
 /* Navbar */
+/* ========================= */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -20,6 +28,7 @@ h1, h2, h3 {
   background: rgba(0,0,0,0.7);
   position: sticky;
   top: 0;
+  z-index: 100;
 }
 
 .nav-links {
@@ -44,10 +53,46 @@ h1, h2, h3 {
   border-radius: 5px;
   font-weight: bold;
   color: #000;
+  transition: background 0.3s;
 }
 
-/* Sections */
-.hero, .features, .download, .contact {
+.btn:hover {
+  background: #00bcd4;
+}
+
+/* ========================= */
+/* Hero Section */
+/* ========================= */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px 50px;
+  flex-wrap: wrap;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero h1 {
+  font-size: 3em;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin: 20px 0;
+}
+
+.hero-image img {
+  max-width: 500px;
+  width: 100%;
+}
+
+/* ========================= */
+/* Features Section */
+/* ========================= */
+.features {
   padding: 100px 50px;
   text-align: center;
 }
@@ -57,6 +102,7 @@ h1, h2, h3 {
   gap: 30px;
   justify-content: center;
   margin-top: 40px;
+  flex-wrap: wrap;
 }
 
 .feature-card {
@@ -64,4 +110,87 @@ h1, h2, h3 {
   padding: 20px;
   border-radius: 10px;
   width: 250px;
+  transition: transform 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+}
+
+/* ========================= */
+/* Download Section */
+/* ========================= */
+.download {
+  padding: 100px 50px;
+  text-align: center;
+}
+
+/* ========================= */
+/* Contact Section */
+/* ========================= */
+.contact {
+  padding: 100px 50px;
+  text-align: center;
+}
+
+.contact input,
+.contact textarea {
+  display: block;
+  width: 300px;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.contact button {
+  margin-top: 20px;
+  background: #00d8ff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ========================= */
+/* Footer */
+/* ========================= */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+}
+
+/* ========================= */
+/* Animations */
+/* ========================= */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s;
+}
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s;
+}
+.slide-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: all 0.8s;
+}
+.slide-in-right.show {
+  opacity: 1;
+  transform: translateX(0);
 }
