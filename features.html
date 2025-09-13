@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MineRise — Features</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-inner">
+      <div class="brand"><div class="logo">MR</div><div class="site-title">MineRise</div></div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="downloads.html">Downloads</a>
+        <a href="discord.html">Discord</a>
+      </nav>
+      <button class="nav-hamburger" id="hambtn2">☰</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero-card" style="margin-top:22px;">
+      <h2 style="margin:0 0 8px 0">Features</h2>
+      <p style="color:var(--muted); margin:0 0 16px 0">Everything built for speed, control, and competitive play.</p>
+
+      <div class="features-grid" style="margin-top:16px;">
+        <div class="feature">
+          <h4>FPS Tuning</h4>
+          <p>Granular control over render distance, particles, and chunk loading.</p>
+        </div>
+
+        <div class="feature">
+          <h4>Combat HUD</h4>
+          <p>Real-time indicators: killstreaks, aura status, and hit effects.</p>
+        </div>
+
+        <div class="feature">
+          <h4>Animations</h4>
+          <p>Customizable animation sets and smooth transitions.</p>
+        </div>
+
+        <div class="feature">
+          <h4>Kill Milestones</h4>
+          <p>Unlock cosmetics at milestones and show them in the UI.</p>
+        </div>
+
+        <div class="feature">
+          <h4>TopBar Integration</h4>
+          <p>Built-in TopBarPlus support for in-client panels and cosmetics.</p>
+        </div>
+
+        <div class="feature">
+          <h4>Ragdoll & Dash</h4>
+          <p>Responsive dash/knockback and ragdoll physics for realism.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>© MineRise</div>
+      <div><a href="index.html" style="color:var(--muted); text-decoration:none">Home</a> · <a href="downloads.html" style="color:var(--muted); text-decoration:none">Download</a></div>
+    </footer>
+  </main>
+
+  <script>
+    const ham = document.getElementById('hambtn2');
+    ham?.addEventListener('click', ()=> {
+      const m = document.getElementById('mobileMenu');
+      if(m){ m.remove(); return; }
+      const box = document.createElement('div');
+      box.className = 'menu-open';
+      box.id = 'mobileMenu';
+      box.innerHTML = '<a href=\"index.html\">Home</a><a href=\"features.html\">Features</a><a href=\"downloads.html\">Downloads</a><a href=\"discord.html\">Discord</a>';
+      document.body.appendChild(box);
+    })
+  </script>
+</body>
+</html>
