@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MineRise — Downloads</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-inner">
+      <div class="brand"><div class="logo">MR</div><div class="site-title">MineRise</div></div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="downloads.html">Downloads</a>
+        <a href="discord.html">Discord</a>
+      </nav>
+      <button class="nav-hamburger" id="hambtn3">☰</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero-card" style="margin-top:22px;">
+      <h2 style="margin:0 0 8px 0">Downloads</h2>
+      <p style="color:var(--muted); margin:0 0 16px 0">Choose your installer or manual bundle.</p>
+
+      <div class="downloads">
+        <a class="download-btn" href="#" download>Windows Installer</a>
+        <a class="download-btn" href="#" download>macOS DMG</a>
+        <a class="download-btn" href="#" download>Linux Tarball</a>
+        <a class="download-btn" href="#" download>Portable ZIP</a>
+      </div>
+
+      <div style="margin-top:18px; color:var(--muted); font-size:13px;">
+        <p>Checksums and install instructions included in each package. If you need help, join our Discord.</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>© MineRise</div>
+      <div><a href="index.html" style="color:var(--muted); text-decoration:none">Home</a> · <a href="features.html" style="color:var(--muted); text-decoration:none">Features</a></div>
+    </footer>
+  </main>
+
+  <script>
+    const ham = document.getElementById('hambtn3');
+    ham?.addEventListener('click', ()=> {
+      const m = document.getElementById('mobileMenu');
+      if(m){ m.remove(); return; }
+      const box = document.createElement('div');
+      box.className = 'menu-open';
+      box.id = 'mobileMenu';
+      box.innerHTML = '<a href=\"index.html\">Home</a><a href=\"features.html\">Features</a><a href=\"downloads.html\">Downloads</a><a href=\"discord.html\">Discord</a>';
+      document.body.appendChild(box);
+    })
+  </script>
+</body>
+</html>
